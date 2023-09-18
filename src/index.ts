@@ -33,9 +33,13 @@ const apolloServer = new ApolloServer({ schema,
         },
     ] });
 await apolloServer.start();
+
+app.use(cors());
 app.use("/graphql", cors(), BodyParser.json(), expressMiddleware(apolloServer));
+
+
 const PORT = 8080;
-await mongoose.connect("mongodb://127.0.0.1/myDb");
+await mongoose.connect("mongodb://my-database:27017");
 httpServer.listen(PORT, () => {
     console.log(`server is listening on port ${PORT}`);
 });
