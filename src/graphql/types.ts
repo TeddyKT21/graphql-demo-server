@@ -40,4 +40,4 @@ schema {
     subscription:Subscription
 } 
 `
-//לסכמה שלנו subscriptions-שימו לב להוספת ה
+//לסכמה שלנו subscription-שימו לב להוספת ה

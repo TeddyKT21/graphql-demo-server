@@ -25,7 +25,7 @@ export const resolvers = {
 
       //subscription-כאן יש הפעלה של ה 
       //מדוע ? כי נרצה ליידע את כל הלקוחות (לא רק היוצר) שאכן נוסף מוצר חדש
-      //pubsub- שימו לב שגם זו מתבצעת בעזרת אובייקט ה
+      //pubsub- שימו לב שזו מתבצעת בעזרת אובייקט ה
       pubsub.publish("PRODUCT_CREATED", {
         productCreated: { ...productData, _id: product._id },
       });
@@ -50,6 +50,7 @@ export const resolvers = {
   Subscription: {
     //שימו לב לתוספת הזו
     //subscription- בעזרתה לקוחות יכולים להאזין ל
+    //pubSub-גם היא בעזרת אובייקט ה
     productCreated: {
       subscribe: () => {
         return pubsub.asyncIterator(["PRODUCT_CREATED"]);

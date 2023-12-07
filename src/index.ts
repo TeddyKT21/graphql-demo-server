@@ -27,7 +27,7 @@ const wsServer = new WebSocketServer({
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 //הפעלת השרת שלנו, הכולל את שני פרוטוקולי התקשורת 
-//makeExecutableSchema אותו שרת גם כולל את הסכמה שלנו, לכן יצרות אתה לפני עם 
+//makeExecutableSchema אותו שרת גם כולל את הסכמה שלנו, לכן יצרנו אתה לפני עם 
 const serverCleanup = useServer({ schema }, wsServer);
 
 //העלאת שרת האפולו שלנו בקוניפורציה 
