@@ -30,6 +30,7 @@ type Mutation{
     updateProduct(_id:String! productData:ProductData!):IProduct
     deleteProduct(_id:String!):IProduct
 }
+
 type Subscription{
     productCreated:IProduct
 }
@@ -39,3 +40,4 @@ schema {
     subscription:Subscription
 } 
 `
+//לסכמה שלנו subscriptions-שימו לב להוספת ה
